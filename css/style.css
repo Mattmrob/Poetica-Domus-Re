@@ -1,0 +1,162 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+#logo {
+    width: 120px;
+    height: auto;
+    padding: 4px 4px 4px 20px;
+}
+
+h2 {
+    text-align: center;
+}
+
+h3 {
+    text-align: center;
+}
+
+.textblurb {
+    color: white;
+}
+
+.navbar {
+    background-color: rgb(85, 12, 12);
+}
+
+.navbar-search {
+    justify-content: center;
+}
+
+.mainContainer {
+    padding: 30px;
+    background-color: black;
+}
+
+.favorites {
+    padding: 20px 20px 20px 0px;
+    background-color: darkcyan;
+}
+
+.poetry-container {
+    background-color: orange;
+    padding: 20px 50px 20px 50px;
+}
+
+/* ------------------- JS RELATED CLASSES AND IDS ------------------- */
+
+/* Input box for user to enter search terms */
+#input {
+
+}
+
+/* Search button - click to submit #input into api call */
+#search {
+
+}
+
+/* Button id, on click lists available authors */
+#generateAuthorList {
+
+}
+
+/* Main box where poems, titles, and author content appears */
+#contentArea {
+
+}
+
+/* for generated author list names */
+.poemListName {
+    text-align: center;
+}
+
+.authorWorksMessage {
+    margin: 0px 0px 20px 0px;
+    padding: 0px 0px 5px 0px;
+    border-bottom: 1px solid grey;
+}
+
+/* loaded title of a poem during list of author's works*/
+.poemTitle {
+    text-align: center;
+    font-size: 1.2em;
+    padding: 0px;
+    margin: 10px;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.poemTitle:hover {
+    color: rgb(33, 20, 150);
+    cursor: pointer;
+}
+
+/* title loaded to content area when a poem is selected */
+.contentTitle {
+    text-align: center;
+    font-size: 3em;
+}
+
+/* author loaded to content area when a poem is selected */
+.contentAuthor {
+    text-align: center;
+    font-size: 1.5em;
+    font-style: italic;
+    padding: 0px 0px 10px 0px;
+    margin: 0px 0px 20px 0px;
+    border-bottom: 5px solid rgb(197, 185, 185);
+}
+
+/* poem lines loaded to content area when a poem is selected */
+.poemLine {
+    text-align: center;
+    font-size: 1.5em;
+    padding: 0px;
+    margin: 2px;
+}
+
+#contentButtons {
+    background-color: purple;
+    margin-top: 30px;
+}
+
+/* link to wikipedia article that is generated at the bottom of the page */
+.wikiLink {
+    color: rgb(20, 141, 150);
+    font-size: 1em;
+    padding: 10px;
+    margin: 10px;
+}
+
+.wikiLink:hover {
+    color: rgb(33, 20, 150);
+}
+
+.favoritesTitle {
+
+}
+
+/* style for each item on the favorites list */
+.favoritesItem {
+    padding: 10px;
+    text-align: center;
+    background-color: green;
+}
+
+.favoritesButton {
+    padding: 10px;
+    border-radius: 20px;
+    border: 1px solid black;
+    background-color: transparent;
+}
+
+.favoritesButton:hover {
+    background-color: rgb(236, 236, 241, .25);
+}
+
+#emptyFavorites {
+    justify-content: center;
+}
+
+/* --------------------------------------------------------------------- */
