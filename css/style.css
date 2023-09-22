@@ -31,17 +31,19 @@ h3 {
 
 .mainContainer {
     padding: 30px;
-    background-color: black;
+    background-color: rgb(247, 223, 146);
 }
 
 .favorites {
-    padding: 20px 20px 20px 0px;
-    background-color: darkcyan;
+    padding: 20px 20px 20px 20px;
+    border: 1px solid black;
+    border-radius: 10px;
 }
 
 .poetry-container {
-    background-color: orange;
     padding: 20px 50px 20px 50px;
+    border: 1px solid black;
+    border-radius: 10px;
 }
 
 /* ------------------- JS RELATED CLASSES AND IDS ------------------- */
@@ -63,7 +65,7 @@ h3 {
 
 /* Main box where poems, titles, and author content appears */
 #contentArea {
-
+    
 }
 
 /* for generated author list names */
@@ -105,7 +107,7 @@ h3 {
     font-style: italic;
     padding: 0px 0px 10px 0px;
     margin: 0px 0px 20px 0px;
-    border-bottom: 5px solid rgb(197, 185, 185);
+    border-bottom: 5px solid rgb(189, 158, 75);
 }
 
 /* poem lines loaded to content area when a poem is selected */
@@ -134,14 +136,16 @@ h3 {
 }
 
 .favoritesTitle {
-
+    text-align: center;
+    font-size: 2em;
 }
 
 /* style for each item on the favorites list */
 .favoritesItem {
-    padding: 10px;
     text-align: center;
-    background-color: green;
+    font-size: 1.2em;
+    padding: 10px;
+    margin: 0px;
 }
 
 .favoritesButton {
@@ -157,6 +161,7 @@ h3 {
 
 #emptyFavorites {
     justify-content: center;
+    margin-top: 20px;
 }
 
 /* --------------------------------------------------------------------- */
