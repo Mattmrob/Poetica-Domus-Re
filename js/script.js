@@ -8,6 +8,7 @@ const searchButton = $("#search");
 const generateAuthorList = $("#generateAuthorList");
 const contentArea = $("#contentArea");
 const favorites = $("#favorite-items");
+const favTitle = $("#favoritesTitle")
 
 // This variable is used in the author list button
 let authorsApi = 'https://poetrydb.org/author'
@@ -24,6 +25,7 @@ let favoriteList = [];
 let viewedHistory = [];
 let untrimmedFavTitle = "";
 let untrimmedFavAuthor = "";
+let toggle = 0;
 
 // -------------- Author List -----------------
 
@@ -127,6 +129,21 @@ function loadFavorites() {
         $("#favorite-items").append(favoritesItem);
     }
 }
+
+// FOR SMALLER SCREENS : Open or close favorites list
+$(favTitle).on("click", function() {
+
+    if (toggle === 0) {
+        favorites.css("display", "inline");
+        toggle = 1 } 
+    else {
+        favorites.css("display", "none");
+        toggle = 0
+    }
+
+    loadFavorites();
+
+})
 
 // authorSearch is an api call and is the most complex of the api calls
 // First for loop fills up authorTitles with the title of each work the searched author has created

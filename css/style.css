@@ -48,6 +48,14 @@ h3 {
     border-radius: 10px;
 }
 
+.hide {
+    display: none;
+}
+
+.show {
+
+}
+
 /* ------------------- JS RELATED CLASSES AND IDS ------------------- */
 
 /* Input box for user to enter search terms */
@@ -140,7 +148,7 @@ h3 {
     color: rgb(33, 20, 150);
 }
 
-.favoritesTitle {
+#favoritesTitle {
     text-align: center;
     font-size: 2em;
 }
@@ -179,11 +187,20 @@ h3 {
         margin: 0px;
     }
 
+    #favoritesTitle:hover {
+        cursor: pointer;
+    }
+
     #favorite-items {
         display: flex;
         flex-direction: column;
         flex-wrap: wrap;
         justify-content: center;
+        display: none;
+    }
+
+    #emptyFavorites {
+        display: none;
     }
 
     .favoritesItem {
@@ -191,5 +208,6 @@ h3 {
         flex-basis: 20%;
         padding: 5px;
     }
+
 
 }
