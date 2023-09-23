@@ -11,6 +11,7 @@ body {
     width: 120px;
     height: auto;
     padding: 4px 4px 4px 20px;
+    text-align: center;
 }
 
 h2 {
@@ -48,14 +49,6 @@ h3 {
 
 .poetry-container {
     padding: 20px 50px 20px 50px;
-}
-
-.hide {
-    display: none;
-}
-
-.show {
-
 }
 
 /* ------------------- JS RELATED CLASSES AND IDS ------------------- */
@@ -179,6 +172,14 @@ h3 {
     justify-content: center;
     margin: 20px 0px 10px 0px;
     padding: 0px;
+    background-color: transparent;
+    border-radius: 20px;
+    border: 1px solid black;
+    display: none;
+}
+
+#emptyFavorites:hover {
+    background-color: rgb(236, 236, 241, .25);
 }
 
 /* --------------------------------------------------------------------- */

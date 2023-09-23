@@ -119,6 +119,16 @@ function loadFavorites() {
     favorites.empty();
     favoriteList = JSON.parse(localStorage.getItem("favorites"));
 
+    if (favoriteList === null) {
+        favoriteList = [];
+    }
+
+    if (favoriteList.length > 0) {
+        emptyFavorites.css("display","initial");
+    } else {
+        emptyFavorites.css("display","none");
+    }
+
     for ( i = 10; favoriteList.length > i;) {
         favoriteList.pop();
     }
@@ -151,6 +161,17 @@ $(favTitle).on("click", function() {
 
         loadFavorites();
     }
+})
+
+// EMPTY FAVORITES BUTTON - Empties favorites list
+$(emptyFavorites).on("click", function(event) {
+    event.preventDefault();
+
+    favoriteList = [];
+
+    storeFavorite();
+    loadFavorites();
+
 })
 
 // authorSearch is an api call and is the most complex of the api calls
