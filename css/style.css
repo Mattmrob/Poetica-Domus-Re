@@ -19,6 +19,8 @@ h3 {
 
 .textblurb {
     color: white;
+    padding: 0px;
+    margin: 0px;
 }
 
 .navbar {
@@ -63,9 +65,13 @@ h3 {
 
 }
 
+.authorListMessage {
+    padding: 10px 10px 10px 10px;
+}
+
 /* Main box where poems, titles, and author content appears */
 #contentArea {
-    
+
 }
 
 /* for generated author list names */
@@ -119,7 +125,6 @@ h3 {
 }
 
 #contentButtons {
-    background-color: purple;
     margin-top: 30px;
 }
 
@@ -161,7 +166,30 @@ h3 {
 
 #emptyFavorites {
     justify-content: center;
-    margin-top: 20px;
+    margin: 20px 0px 0px 0px;
+    padding: 0px;
 }
 
 /* --------------------------------------------------------------------- */
+
+@media (max-width: 767px) {
+    
+    .navbar-search {
+        padding: 0px;
+        margin: 0px;
+    }
+
+    #favorite-items {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .favoritesItem {
+        font-size: 1em;
+        flex-basis: 20%;
+        padding: 5px;
+    }
+
+}

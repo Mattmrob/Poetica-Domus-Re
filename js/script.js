@@ -46,6 +46,9 @@ function getAuthorList(url) {
             let authorName = data.authors;
             let currentName ;
 
+            let authorListMessage = $('<h3 class="col-12 authorListMessage">Here are all available authors</h3>')
+            $("#contentArea").append(authorListMessage);
+
             let authorListContainer = $('<div class="container-fluid authorListContainer"></div>')
             $("#contentArea").append(authorListContainer);
 
@@ -113,7 +116,7 @@ function loadFavorites() {
     favorites.empty();
     favoriteList = JSON.parse(localStorage.getItem("favorites"));
 
-    for ( i = 12; favoriteList.length > i;) {
+    for ( i = 10; favoriteList.length > i;) {
         favoriteList.pop();
     }
 
