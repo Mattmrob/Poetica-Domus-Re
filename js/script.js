@@ -8,6 +8,7 @@ const searchButton = $("#search");
 const generateAuthorList = $("#generateAuthorList");
 const contentArea = $("#contentArea");
 const favorites = $("#favorite-items");
+const favoriteItem = $(".favoritesItem");
 const favTitle = $("#favoritesTitle");
 const emptyFavorites = $("#emptyFavorites");
 const hideFavoritesButton = $("#hideFavoritesButton");
@@ -141,6 +142,11 @@ function loadFavorites() {
         $("#favorite-items").append(favoritesItem);
     }
 }
+
+// CLICK ON FAVORITES ITEM SEARCH
+$(".favoritesItem").on("click", function() {
+    console.log(this.data('title'))
+})
 
 // FAVORITES LIST EXPAND - FOR SMALLER SCREENS
 // If below 767 px, clicking on favoritesTitle will cause the favorites list to expand or retract
