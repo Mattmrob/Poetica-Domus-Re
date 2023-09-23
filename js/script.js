@@ -8,7 +8,8 @@ const searchButton = $("#search");
 const generateAuthorList = $("#generateAuthorList");
 const contentArea = $("#contentArea");
 const favorites = $("#favorite-items");
-const favTitle = $("#favoritesTitle")
+const favTitle = $("#favoritesTitle");
+const emptyFavorites = $("#emptyFavorites");
 
 // This variable is used in the author list button
 let authorsApi = 'https://poetrydb.org/author'
@@ -130,19 +131,26 @@ function loadFavorites() {
     }
 }
 
-// FOR SMALLER SCREENS : Open or close favorites list
+// FAVORITES LIST EXPAND - FOR SMALLER SCREENS
+// If below 767 px, clicking on favoritesTitle will cause the favorites list to expand or retract
 $(favTitle).on("click", function() {
 
-    if (toggle === 0) {
-        favorites.css("display", "inline");
-        toggle = 1 } 
-    else {
-        favorites.css("display", "none");
-        toggle = 0
+    var media = window.matchMedia("(max-width: 767px)")
+
+    if (media.matches) {
+
+        if (toggle === 0) {
+            favorites.css("display", "inline");
+            emptyFavorites.css("display", "block")
+            toggle = 1 } 
+        else {
+            favorites.css("display", "none");
+            emptyFavorites.css("display", "none")
+            toggle = 0
+        }
+
+        loadFavorites();
     }
-
-    loadFavorites();
-
 })
 
 // authorSearch is an api call and is the most complex of the api calls
@@ -229,11 +237,11 @@ function loadPoem(url) {
             let wikiUrl = 'http://en.wikipedia.org/w/api.php?action=opensearch&format=json&origin=*&search=' + data[0].author + '&formatversion=2&limit=1';
 
             let contentTitle = $("<h3></h3>").text(data[0].title)
-            $(contentTitle).addClass("contentTitle");
+            $(contentTitle).addClass("contentTitle col-md-12");
             $("#contentArea").append(contentTitle);
 
             let contentAuthor = $("<h5></h5>").text("by " + data[0].author)
-            $(contentAuthor).addClass("contentAuthor");
+            $(contentAuthor).addClass("contentAuthor col-md-12");
             $("#contentArea").append(contentAuthor);
 
             for (let i = 0; i < data[0].lines.length; i++) {
@@ -249,7 +257,7 @@ function loadPoem(url) {
 
             // favorites / history
 
-            let favoritesButton = $('<button class="favoritesButton row-4 text-center"></button>').text("Add to Favorites!")
+            let favoritesButton = $('<button class="favoritesButton col-12 text-center"></button>').text("Add to Favorites!")
             $(favoritesButton).on("click", saveToFavorites);
             $("#contentButtons").append(favoritesButton);
 
@@ -278,7 +286,7 @@ function wikiApiCall(url) {
          })
         .then(function (data) {
 
-            let wikiLink = $('<a href="" class="row-4 text-center wikiLink" target="_blank"</a>').text("Click for more info on this Author");
+            let wikiLink = $('<a href="" class="col-12 wikiLink" target="_blank"</a>').text("More Info on this Artist");
             $("#contentButtons").append(wikiLink);
             $(wikiLink).attr("href", data[3][0]);
         })
