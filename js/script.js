@@ -10,6 +10,7 @@ const contentArea = $("#contentArea");
 const favorites = $("#favorite-items");
 const favTitle = $("#favoritesTitle");
 const emptyFavorites = $("#emptyFavorites");
+const hideFavoritesButton = $("#hideFavoritesButton");
 
 // This variable is used in the author list button
 let authorsApi = 'https://poetrydb.org/author'
@@ -152,10 +153,12 @@ $(favTitle).on("click", function() {
         if (toggle === 0) {
             favorites.css("display", "inline");
             emptyFavorites.css("display", "block")
+            hideFavoritesButton.css("display", "initial")
             toggle = 1 } 
         else {
             favorites.css("display", "none");
             emptyFavorites.css("display", "none")
+            hideFavoritesButton.css("display", "none")
             toggle = 0
         }
 

@@ -43,8 +43,7 @@ h3 {
 
 .favorites {
     padding: 20px 20px 20px 20px;
-    border: 1px solid rgb(189, 158, 75);
-    border-radius: 10px;
+    border-right: 2px solid rgb(189, 158, 75);
 }
 
 .poetry-container {
@@ -197,6 +196,8 @@ h3 {
 
     .favorites {
         padding: 15px 10px 5px 10px;
+        border: 1px solid rgb(189, 158, 75);
+        border-radius: 10px;
     }
 
     #favoritesTitle {
@@ -213,6 +214,10 @@ h3 {
         flex-direction: column;
         flex-wrap: wrap;
         justify-content: center;
+        display: none;
+    }
+
+    #hideFavoritesButton {
         display: none;
     }
 
