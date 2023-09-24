@@ -54,17 +54,38 @@ h3 {
 
 /* Input box for user to enter search terms */
 #input {
-
+    height: 40px;
+    background-color: white;
+    border: none;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-top: 1.5px solid black;
+    border-left: 1.5px solid black;
+    border-bottom: 1.5px solid black;
 }
 
 /* Search button - click to submit #input into api call */
 #search {
-
+    height: 40px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-left: 0px;
+    border-top: 1.5px solid black;
+    border-bottom: 1.5px solid black;
+    border-right: 1.5px solid black;
+}
+#search:hover {
+    background-color: rgb(233, 219, 200);
 }
 
 /* Button id, on click lists available authors */
 #generateAuthorList {
-
+    height: 40px;
+    margin: 0px 0px 0px 10px;
+    border-radius: 5px;
+}
+#generateAuthorList:hover {
+    background-color: rgb(233, 219, 200);
 }
 
 .authorListMessage {
@@ -210,6 +231,26 @@ h3 {
         padding: 0px;
         margin: 0px;
     }
+
+#input {
+    background-color: white;
+    border: 1.5px solid black;
+    border-radius: 0px;
+    height: 40px;
+
+}
+
+#search {
+    border: 1.5px solid black;
+    border-radius: 0px;
+    height: 30px;
+}
+
+#generateAuthorList {
+    margin: 20px 0px 10px 0px;
+    border-radius: 0px;
+    height: 30px;
+}
 
     .favorites {
         padding: 15px 10px 5px 10px;

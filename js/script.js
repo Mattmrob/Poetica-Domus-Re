@@ -177,14 +177,12 @@ $(window).resize(function(){
 
     if (mediaResizeLg.matches) {
         favorites.css("display", "inline");
-        emptyFavorites.css("display", "block");
         hideFavoritesButton.css("display", "initial");
         toggle = 1;
-    } else {
-        favorites.css("display", "none");
-        emptyFavorites.css("display", "none");
-        hideFavoritesButton.css("display", "none");
-        toggle = 0
+
+        if (favoriteList.length > 1) {
+            emptyFavorites.css("display", "block");
+        }
     }
 })
 
