@@ -63,7 +63,7 @@ function getAuthorList(url) {
             for (let i = 0; i < authorName.length; i++) {
                 currentName = document.createElement("p");
                 currentName.textContent = authorName[i];
-                $(currentName).addClass("poetListName col-md-3");
+                $(currentName).addClass("poemListName col-sm-3");
                 $(rowDisplay).append(currentName);
               }
         })
@@ -136,39 +136,55 @@ function loadFavorites() {
     }
 
     for (let i = 0; i < favoriteList.length; i++) {
-        let favoritesItem = $('<p class="favoritesItem col-md-12"></p>').text('"'+ favoriteList[i][0] + '"' + ' by ' + favoriteList[i][1])
+        let favoritesItem = $('<p class="favoritesItemTitle col-md-12"></p>').text(favoriteList[i][0])
+        let favoritesItemAuthor = $('<p class="favoritesItemAuthor col-md-12"></p>').text(' by ' + favoriteList[i][1])
         $(favoritesItem).data('title', favoriteList[i][0])
-        $(favoritesItem).data('author', favoriteList[i][1])
+        $(favoritesItemAuthor).data('author', favoriteList[i][1])
         $("#favorite-items").append(favoritesItem);
+        $("#favorite-items").append(favoritesItemAuthor);
+
     }
 }
-
-// CLICK ON FAVORITES ITEM SEARCH
-$(".favoritesItem").on("click", function() {
-    console.log(this.data('title'))
-})
 
 // FAVORITES LIST EXPAND - FOR SMALLER SCREENS
 // If below 767 px, clicking on favoritesTitle will cause the favorites list to expand or retract
 $(favTitle).on("click", function() {
 
-    var media = window.matchMedia("(max-width: 767px)")
+    let media = window.matchMedia("(max-width: 767px)")
 
     if (media.matches) {
 
         if (toggle === 0) {
             favorites.css("display", "inline");
-            emptyFavorites.css("display", "block")
-            hideFavoritesButton.css("display", "initial")
-            toggle = 1 } 
-        else {
+            emptyFavorites.css("display", "block");
+            hideFavoritesButton.css("display", "initial");
+            toggle = 1 
+        } else {
             favorites.css("display", "none");
-            emptyFavorites.css("display", "none")
-            hideFavoritesButton.css("display", "none")
+            emptyFavorites.css("display", "none");
+            hideFavoritesButton.css("display", "none");
             toggle = 0
         }
 
         loadFavorites();
+    }
+})
+
+// On Resize, set favorites toggle to display all hidden items
+$(window).resize(function(){
+
+    let mediaResizeLg = window.matchMedia("(min-width: 768px)");
+
+    if (mediaResizeLg.matches) {
+        favorites.css("display", "inline");
+        emptyFavorites.css("display", "block");
+        hideFavoritesButton.css("display", "initial");
+        toggle = 1;
+    } else {
+        favorites.css("display", "none");
+        emptyFavorites.css("display", "none");
+        hideFavoritesButton.css("display", "none");
+        toggle = 0
     }
 })
 
