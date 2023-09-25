@@ -3,10 +3,15 @@
     margin: 0;
 }
 
+body {
+    background-color: rgb(247, 223, 146);
+}
+
 #logo {
     width: 120px;
     height: auto;
     padding: 4px 4px 4px 20px;
+    text-align: center;
 }
 
 h2 {
@@ -17,8 +22,14 @@ h3 {
     text-align: center;
 }
 
+.introMessage2 {
+    margin-top: 40px;
+}
+
 .textblurb {
     color: white;
+    padding: 0px;
+    margin: 0px;
 }
 
 .navbar {
@@ -31,16 +42,15 @@ h3 {
 
 .mainContainer {
     padding: 30px;
-    background-color: black;
+    background-color: rgb(247, 223, 146);
 }
 
 .favorites {
-    padding: 20px 20px 20px 0px;
-    background-color: darkcyan;
+    padding: 20px 20px 20px 20px;
+    border-right: 2px solid rgb(189, 158, 75);
 }
 
 .poetry-container {
-    background-color: orange;
     padding: 20px 50px 20px 50px;
 }
 
@@ -48,27 +58,62 @@ h3 {
 
 /* Input box for user to enter search terms */
 #input {
-
+    height: 40px;
+    background-color: white;
+    border: none;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-top: 1.5px solid black;
+    border-left: 1.5px solid black;
+    border-bottom: 1.5px solid black;
 }
 
 /* Search button - click to submit #input into api call */
 #search {
-
+    height: 40px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-left: 0px;
+    border-top: 1.5px solid black;
+    border-bottom: 1.5px solid black;
+    border-right: 1.5px solid black;
+}
+#search:hover {
+    background-color: rgb(233, 219, 200);
 }
 
 /* Button id, on click lists available authors */
 #generateAuthorList {
+    height: 40px;
+    margin: 0px 0px 0px 10px;
+    border-radius: 5px;
+}
+#generateAuthorList:hover {
+    background-color: rgb(233, 219, 200);
+}
 
+.authorListMessage {
+    margin: 5px 10px 10px 10px;
+    padding: 0px 0px 5px 0px;
+    border-bottom: 3px solid rgb(189, 158, 75);
+}
+
+.authorListContainer {
+    padding-top: 20px;
 }
 
 /* Main box where poems, titles, and author content appears */
 #contentArea {
-
+    margin: 0px;
+    padding: 0px;
 }
 
 /* for generated author list names */
 .poemListName {
     text-align: center;
+    font-size: 1em;
+    padding: 5px 0px 5px 0px;
+    border-bottom: 1.5px solid rgb(189, 158, 75, .5);
 }
 
 .authorWorksMessage {
@@ -81,8 +126,6 @@ h3 {
 .poemTitle {
     text-align: center;
     font-size: 1.2em;
-    padding: 0px;
-    margin: 10px;
     text-decoration: underline;
     text-underline-offset: 2px;
 }
@@ -105,7 +148,7 @@ h3 {
     font-style: italic;
     padding: 0px 0px 10px 0px;
     margin: 0px 0px 20px 0px;
-    border-bottom: 5px solid rgb(197, 185, 185);
+    border-bottom: 5px solid rgb(189, 158, 75);
 }
 
 /* poem lines loaded to content area when a poem is selected */
@@ -113,42 +156,53 @@ h3 {
     text-align: center;
     font-size: 1.5em;
     padding: 0px;
-    margin: 2px;
+    margin: 15px 0px 10px 0px;
+    border-bottom: 1.5px solid rgb(189, 158, 75, .5);
 }
 
 #contentButtons {
-    background-color: purple;
     margin-top: 30px;
+    padding: 0;
 }
 
 /* link to wikipedia article that is generated at the bottom of the page */
 .wikiLink {
     color: rgb(20, 141, 150);
     font-size: 1em;
-    padding: 10px;
-    margin: 10px;
 }
 
 .wikiLink:hover {
     color: rgb(33, 20, 150);
 }
 
-.favoritesTitle {
-
+#favoritesTitle {
+    text-align: center;
+    font-size: 2em;
 }
 
 /* style for each item on the favorites list */
-.favoritesItem {
-    padding: 10px;
+.favoritesItemTitle {
     text-align: center;
-    background-color: green;
+    font-size: 1.5em;
+    font-style: italic;
+    padding: 10px 10px 0px 10px;
+    margin: 0px;
+    border-bottom: 1px solid rgb(189, 158, 75);
+}
+
+.favoritesItemAuthor {
+    text-align: center;
+    font-size: 1.2em;
+    margin: 0px;
 }
 
 .favoritesButton {
     padding: 10px;
+    margin-bottom: 10px;
     border-radius: 20px;
     border: 1px solid black;
     background-color: transparent;
+    text-align: center;
 }
 
 .favoritesButton:hover {
@@ -157,6 +211,96 @@ h3 {
 
 #emptyFavorites {
     justify-content: center;
+    margin: 20px 0px 10px 0px;
+    padding: 0px;
+    background-color: transparent;
+    border-radius: 20px;
+    border: 1px solid black;
+    display: none;
+}
+
+#emptyFavorites:hover {
+    background-color: rgb(236, 236, 241, .25);
 }
 
 /* --------------------------------------------------------------------- */
+
+@media (max-width: 767px) {
+
+    .mainContainer {
+        padding-top: 10px;
+    }
+    
+    .navbar-search {
+        padding: 0px;
+        margin: 0px;
+    }
+
+#input {
+    background-color: white;
+    border: 1.5px solid black;
+    border-radius: 0px;
+    height: 40px;
+
+}
+
+#search {
+    border: 1.5px solid black;
+    border-radius: 0px;
+    height: 30px;
+}
+
+#generateAuthorList {
+    margin: 20px 0px 10px 0px;
+    border-radius: 0px;
+    height: 30px;
+}
+
+    .favorites {
+        padding: 15px 10px 5px 10px;
+        border: 1px solid rgb(189, 158, 75);
+        border-radius: 10px;
+    }
+
+    #favoritesTitle {
+        font-size: 1.8em;
+    }
+
+    #favoritesTitle:hover {
+        cursor: pointer;
+        color: brown;
+    }
+
+    #favorite-items {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        display: none;
+    }
+
+    #hideFavoritesButton {
+        display: none;
+    }
+
+    #emptyFavorites {
+        display: none;
+    }
+
+    .favoritesItemTitle {
+        font-size: 2em;
+        flex-basis: 20%;
+        padding: 5px;
+    }
+
+    .favoritesItemAuthor {
+        font-size: 1em;
+        flex-basis: 20%;
+        padding: 5px;
+    }
+
+    .poemLine {
+        font-size: 1.3em;
+    }
+
+}
