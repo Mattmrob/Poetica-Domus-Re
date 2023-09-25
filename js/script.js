@@ -51,7 +51,7 @@ function getAuthorList(url) {
             let authorName = data.authors;
             let currentName ;
 
-            let authorListMessage = $('<h3 class="col-12 authorListMessage">Here are all available authors</h3>')
+            let authorListMessage = $('<h3 class="col-12 authorListMessage">Here are all available Authors</h3>')
             $("#contentArea").append(authorListMessage);
 
             let authorListContainer = $('<div class="container-fluid authorListContainer"></div>')
