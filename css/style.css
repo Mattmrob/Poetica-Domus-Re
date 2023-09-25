@@ -116,6 +116,7 @@ h3 {
     border-bottom: 1.5px solid rgb(189, 158, 75, .5);
 }
 
+/* message on generated author list names */
 .authorWorksMessage {
     margin: 0px 0px 20px 0px;
     padding: 0px 0px 5px 0px;
@@ -175,12 +176,13 @@ h3 {
     color: rgb(33, 20, 150);
 }
 
+/* Title for favorites list section */
 #favoritesTitle {
     text-align: center;
     font-size: 2em;
 }
 
-/* style for each item on the favorites list */
+/* style for a favorite's title */
 .favoritesItemTitle {
     text-align: center;
     font-size: 1.5em;
@@ -190,12 +192,14 @@ h3 {
     border-bottom: 1px solid rgb(189, 158, 75);
 }
 
+/* style for a favorite's author */
 .favoritesItemAuthor {
     text-align: center;
     font-size: 1.2em;
     margin: 0px;
 }
 
+/* add to favorites button */
 .favoritesButton {
     padding: 10px;
     margin-bottom: 10px;
@@ -209,6 +213,7 @@ h3 {
     background-color: rgb(236, 236, 241, .25);
 }
 
+/* empty favorites button */
 #emptyFavorites {
     justify-content: center;
     margin: 20px 0px 10px 0px;
