@@ -221,8 +221,11 @@ function wikiApiCall(url) {
         .then(function (data) {
 
             let wikiLink = $('<a href="" class="col-12 wikiLink" target="_blank"</a>').text("More Info on this Artist");
-            $("#contentButtons").append(wikiLink);
             $(wikiLink).attr("href", data[3][0]);
+            let testButton = $('<button>test</button>')
+            $("#contentButtons").append(wikiLink);
+            $("#contentButtons").append(testButton);
+
         })
 
 }
