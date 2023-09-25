@@ -254,6 +254,21 @@ $(searchButton).on("click", function(event) {
 // CREDIT: solution for replacing blank spaces using split and join: https://www.geeksforgeeks.org/how-to-remove-spaces-from-a-string-using-javascript/
 // CREDIT: solution to replacing spaces with a specific string: http://dotnet-concept.com/Tips/2015/3/5798821/How-to-replace-Space-with-Dash-or-Underscore-in-JQuery
 
+// Hit enter on input to search as well
+$(searchText).keypress(function(e) {
+    if(e.which == 13) {
+        userInput = searchText.val();
+
+        let searchAuthorApi = 'https://poetrydb.org/author/' + userInput;
+        let trimmedAuthor = searchAuthorApi.split(" ").join("%20");
+
+        contentArea.empty();
+        authorSearch(trimmedAuthor);
+    }
+});
+// CREDIT: jquery search on keypress from user Ian Roke at https://stackoverflow.com/questions/979662/how-can-i-detect-pressing-enter-on-the-keyboard-using-jquery
+
+
 // --------------------- Click on a Generated Poem Title from the Search Function to Load that Poem----------------------------
 
 // loadPoem takes a url input for an api call to search for a specific poem and load it to the contentArea
