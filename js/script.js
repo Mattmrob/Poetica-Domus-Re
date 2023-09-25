@@ -192,11 +192,11 @@ function loadPoem(url) {
             let contentButtons = $('<div id="contentButtons" class="container-fluid text-center"></div>')
             $("#contentArea").append(contentButtons);
 
-            wikiApiCall(wikiUrl);
-
             let favoritesButton = $('<button class="favoritesButton col-12 text-center"></button>').text("Add to Favorites!")
             $(favoritesButton).on("click", saveToFavorites);
             $("#contentButtons").append(favoritesButton);
+
+            wikiApiCall(wikiUrl);
 
             currentAuthor = data[0].author;
             currentTitle = data[0].title;
