@@ -115,7 +115,9 @@ function authorSearch(url) {
             return response.json();
          })
         .then(function (data) {
+
             let authorTitles = [];
+            currentAuthor = data[0].author;
 
             if (data.status == 404) throw "Author not found";
             let authorWorksMessage = document.createElement("h3");
@@ -143,12 +145,12 @@ function authorSearch(url) {
         })
 }
 
-// Takes clicked on title and formats it to a suitable api call format to search for that poem
+// Takes clicked on title and author name then formats them to a suitable api call format to search for that poem
 function onClick() {
 
     clickableClicked = this.innerHTML;
-    let trimmedTitle = clickableClicked.split(" ").join("%20");
-    let currentPoemSearch = "https://poetrydb.org/title/" + trimmedTitle;
+    let untrimmedSearch = "https://poetrydb.org/author,title/" + currentAuthor + ";" + clickableClicked;
+    let currentPoemSearch = untrimmedSearch.split(" ").join("%20");
     console.log(currentPoemSearch);
 
     contentArea.empty();
@@ -275,7 +277,7 @@ function loadFavorites() {
     }
 }
 
-// FAVORITES LIST EXPAND - FOR SMALLER SCREENS
+// FAVORITES LIST EXPAND
 // If below 767 px, clicking on favoritesTitle will cause the favorites list to expand or retract
 $(favTitle).on("click", function() {
 
