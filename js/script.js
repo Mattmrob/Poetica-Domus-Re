@@ -37,7 +37,6 @@ let toggle = 0;
 $(generateAuthorList).on("click", function(event) {
     event.preventDefault();
 
-    $("#wikiLinkTarget").css("display", "none");
     contentArea.empty();
     getAuthorList(authorsApi);
 })
@@ -45,8 +44,6 @@ $(generateAuthorList).on("click", function(event) {
 // AUTHOR LIST GENERATION
 // Api Call generates list of authors to contentArea section
 function getAuthorList(url) {
-
-    $("#wikiLinkTarget").css("display", "none");
 
     fetch(url)
         .then(function (response) {
@@ -82,9 +79,6 @@ function getAuthorList(url) {
 // On click, creates correctly formatted api input for authorSearch and runs that function
 $(searchButton).on("click", function(event) {
     event.preventDefault();
-
-    $("#wikiLinkTarget").css("display", "none");
-
     userInput = searchText.val();
 
     let searchAuthorApi = 'https://poetrydb.org/author/' + userInput;
@@ -99,9 +93,6 @@ $(searchButton).on("click", function(event) {
 // On enter, creates correctly formatted api input for authorSearch and runs that function
 $(searchText).keypress(function(e) {
     if(e.which == 13) {
-
-        $("#wikiLinkTarget").css("display", "none");
-
         userInput = searchText.val();
 
         let searchAuthorApi = 'https://poetrydb.org/author/' + userInput;
@@ -118,8 +109,6 @@ $(searchText).keypress(function(e) {
 // Each generated title is generated with an on-click event listener that runs the onClick function
 // If no authors are found, the catch performs an new api call using the input to search for a poem title
 function authorSearch(url) {
-
-    $("#wikiLinkTarget").css("display", "none");
 
     fetch(url)
         .then(function (response) {
@@ -231,9 +220,9 @@ function wikiApiCall(url) {
          })
         .then(function (data) {
 
-            // let wikiLink = $('<a href="" class="col-12 wikiLink" target="_blank">More Info on this Artist</a>');
+            let wikiLink = $('<a href="" class="col-12 wikiLink" target="_blank">More Info on this Artist</a>');
             $("#wikiLinkTarget").attr("href", data[3][0]);
-            $("#wikiLinkTarget").css("display", "initial");
+            $("#contentButtons").append(wikiLink);
 
         })
 
